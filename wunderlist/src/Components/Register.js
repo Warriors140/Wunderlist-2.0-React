@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-
-class Login extends Component {
+class Register extends Component {
   constructor() {
     super();
     this.state = {
+      firstname: "",
+      lastname: "",
       email: "",
       password: "",
       errors: {}
@@ -16,17 +16,19 @@ onChange = e => {
   };
 onSubmit = e => {
     e.preventDefault();
-const userData = {
+const newUser = {
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
       email: this.state.email,
       password: this.state.password
     };
-console.log(userData);
+console.log(newUser);
   };
 render() {
     const { errors } = this.state;
 return (
       <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
+        <div className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
@@ -34,13 +36,23 @@ return (
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
-                <b>Login</b> below
+                <b>Register</b> below
               </h4>
               <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
+                Already have an account? <Link to="/login">Log in</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.name}
+                  error={errors.name}
+                  id="name"
+                  type="text"
+                />
+                <label htmlFor="name">First Name</label>
+              </div>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
@@ -49,7 +61,7 @@ return (
                   id="email"
                   type="email"
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Last Name</label>
               </div>
               <div className="input-field col s12">
                 <input
@@ -57,9 +69,19 @@ return (
                   value={this.state.password}
                   error={errors.password}
                   id="password"
+                  type="text"
+                />
+                <label htmlFor="password">Email</label>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.password2}
+                  error={errors.password2}
+                  id="password2"
                   type="password"
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password2">Password</label>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
@@ -72,7 +94,7 @@ return (
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
-                  Login
+                  Sign up
                 </button>
               </div>
             </form>
@@ -82,4 +104,4 @@ return (
     );
   }
 }
-export default Login;
+export default Register;
