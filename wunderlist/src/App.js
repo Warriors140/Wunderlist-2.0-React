@@ -1,3 +1,18 @@
+
+import React from "react";
+import AddTodo from "./containers/AddTodo"
+import TodoList from "./containers/TodoList";
+import Footer from "./containers/Footer";
+
+const App = () => (
+  <div>
+    <AddTodo />
+    <TodoList />
+    <Footer />
+  </div>
+);
+
+
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
@@ -23,4 +38,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
