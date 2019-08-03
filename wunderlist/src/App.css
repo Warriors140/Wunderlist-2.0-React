@@ -31,3 +31,19 @@
     transform: rotate(360deg);
   }
 }
+
+.Todo {
+  text-align: center;
+  /* background-image: url('./list.jpg');
+  background-size: cover;
+  min-height: 100vh; */
+}
+
+.Todo2{
+   background-image: url('./list.jpg');
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

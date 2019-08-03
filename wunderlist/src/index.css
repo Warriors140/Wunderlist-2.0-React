@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./list.jpg');
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 code {
